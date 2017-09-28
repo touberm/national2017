@@ -100,6 +100,8 @@ time p{font-size: 16px;}
 
 /* table */
 #table{background:url('../images/table.jpg?v0.1') no-repeat center;background-size: cover;}
+#table .table_con{background: url('../images/table-tt.png') no-repeat center;background-size:contain;}
+
 #table .title{display: block;margin:0 auto;width:180px;padding-bottom:10px;}
 #table table{width:1000px;color:#fff;border-collapse: collapse;margin:0 auto 10px;}
 #table table td,#table table th{border-top:1px solid #464070;border-bottom:1px solid #464070;border-left:1px solid #8974df;border-right:1px solid #8974df;line-height:36px;height:36px;text-align: center;font-weight: normal;}

@@ -9,6 +9,12 @@ $(function(){
 
   /* table为全屏减fix高度 */
   $('#table').height($(window).height() - $('#fix').height());
+  /* table内容为父元素高度 */
+  $('.table_con').height($('#table').height());
+  if($('.table_con').height() > 768){
+    /* 设定其不能高于原尺寸高度 */
+    $('.table_con').height(768); 
+  }
 
   /* .con在父元素中居中 */
   $('.wrap').each(function(index,ele){
@@ -17,24 +23,32 @@ $(function(){
   $('body').css({'padding-bottom':$('#fix').height()});
   /* side 居中 */
   $('#side').css({'top':($(window).height()-$('#side').outerHeight())/2});
-/*页面加载完后 设置全屏和con居中*/
+/*页面加载完后 设置高度*/
   $(window).on('load',function(){
     $('.full').each(function(index,ele){
       $(ele).height($(window).height());
     });
     $('#table').height($(window).height() - $('#fix').height());
+    $('#table_con').height($('#table').height());
+    if($('.table_con').height() > 768){
+      $('.table_con').height(768); 
+    }
     $('.wrap').each(function(index,ele){
       $(ele).find('.con').css({'top':($(ele).height()-$(ele).find('.con').height())/2,'left':($(ele).width()-$(ele).find('.con').width())/2});
     });
     $('body').css({'padding-bottom':$('#fix').height()});
     $('#side').css({'top':($(window).height()-$('#side').outerHeight())/2});
   });
-/*页面改变大小后 设置全屏和con居中*/
+/*页面改变大小后 重新设置*/
   $(window).on('resize',function(){
     $('.full').each(function(index,ele){
       $(ele).height($(window).height());
     });
     $('#table').height($(window).height() - $('#fix').height());
+    $('#table_con').height($('#table').height());
+    if($('.table_con').height() > 768){
+      $('.table_con').height(768); 
+    }
     $('.wrap').each(function(index,ele){
       $(ele).find('.con').css({'top':($(ele).height()-$(ele).find('.con').height())/2,'left':($(ele).width()-$(ele).find('.con').width())/2});
     });
